@@ -1,3 +1,6 @@
+import { PrimeReactProvider } from "primereact/api";
+import "primereact/resources/themes/soho-light/theme.css";
+
 import Demo from "./components/Demo";
 import Hero from "./components/Hero";
 

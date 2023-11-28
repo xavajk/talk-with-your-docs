@@ -20,9 +20,9 @@ const Hero = () => {
         <span className="purple_gradient">OpenAI GPT-4</span>
       </h1>
       <h2 className="desc">
-        Simplify your understanding with Talk With Your Docs! An open-source
-        document Q&A service that enables easy communication with your
-        documents.
+        Simplify your understanding with Talk With Your Docs! <br />
+        An open-source document Q&A service that enables easy communication with
+        your documents.
       </h2>
     </header>
   );
