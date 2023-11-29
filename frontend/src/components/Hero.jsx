@@ -15,12 +15,12 @@ const Hero = () => {
           Github
         </button>
       </nav>
-      <h1 className="head_text">
+      <h1 className="head_text pt-20">
         Q&A Your Documents with <br className="max-md:hidden" />
-        <span className="purple_gradient">OpenAI GPT-4</span>
+        <span className="purple_gradient">OpenAI RAG</span>
       </h1>
       <h2 className="desc">
-        Simplify your understanding with Talk With Your Docs! <br />
+        Simplify your understanding with <b>Talk With Your Docs!</b> <br />
         An open-source document Q&A service that enables easy communication with
         your documents.
       </h2>
