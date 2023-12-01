@@ -1,3 +1,5 @@
 {
-  "css.customData": [".vscode/tailwind.json"]
+  "css.customData": [".vscode/tailwind.json"],
+  "python.terminal.activateEnvironment": true,
+  "python.venvPath": "/backend/venv"
 }

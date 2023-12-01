@@ -6,14 +6,44 @@ import { Button } from "primereact/button";
 const Demo = () => {
   const [usr, setUsr] = useState("");
   const [key, setKey] = useState("");
+
+  const handleUserData = async (e) => {
+    const formData = new FormData();
+    formData.append("user", usr);
+    formData.append("api-key", key);
+    await fetch("http://127.0.0.1:5000/api/verify-user", {
+      method: "POST",
+      body: formData,
+    }).then((res) => {
+      console.log(res.json());
+    });
+  };
+
+  const fileUploadHandler = async (e) => {
+    Object.values(e.files).forEach(async (file) => {
+      const formData = new FormData();
+      formData.append("file", file);
+      await fetch("http://127.0.0.1:5000/api/upload", {
+        method: "POST",
+        body: formData,
+      }).then((res) => {
+        console.log("File sent successfully.");
+        return res.json();
+      });
+    });
+  };
+
   return (
     <div className="mt-16 w-full max-w-xl">
-      <div className="flex flex-col w-full gap-2">
+      <div className="flex flex-col gap-2">
         <FileUpload
           name="card"
-          url={"/api/upload"}
           multiple
+          accept="application/pdf"
           maxFileSize={1000000}
+          customUpload
+          uploadHandler={fileUploadHandler}
+          onUpload={(e) => {}}
           emptyTemplate={
             <p className="m-0">Drag and drop files to here to upload.</p>
           }
@@ -49,10 +79,10 @@ const Demo = () => {
           </div>
         </div>
         <Button
-          className="m-10 bg-slate-800 w-32 h-10 text-sm text-white"
-          label="Submit"
+          className="m-10 bg-slate-800 w-40 h-10 text-sm text-zinc-100"
+          label="Start chatting..."
           size="large"
-          onC
+          onClick={handleUserData}
         />
       </div>
     </div>
